@@ -30,7 +30,6 @@ class Time {
 int timeEntry(std::vector <std::string> &words, Time &tpointer);
 
 int validateHoursI(Time &t);
-int validateHoursII(Time &t);
 int validateMinutes(Time &t);
 int validateSeconds(Time &t);
 int validateAP(std::vector <std::string> &words, Time &t);

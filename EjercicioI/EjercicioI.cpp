@@ -183,7 +183,7 @@ int Time::modifyTime() {
         seconds = s;
         ap = 'a';
         
-        validateHoursII(*this);
+        validateHoursI(*this);
         validateMinutes(*this);
         validateSeconds(*this);
         
@@ -198,7 +198,7 @@ int Time::modifyTime() {
         seconds = 0;
         ap = 'a';
 
-        validateHoursII(*this);
+        validateHoursI(*this);
         validateMinutes(*this);
         
         coutsModification();
@@ -211,7 +211,7 @@ int Time::modifyTime() {
         seconds = 0;
         ap = 'a';
 
-        validateHoursII(*this);
+        validateHoursI(*this);
         
         coutsModification();
 
@@ -235,17 +235,6 @@ int validateHoursI(Time &t) {
     }
 
     return 0;
-}
-
-// Validación de horas para formato 24 horas
-int validateHoursII(Time &t) {
-    if (t.hours < 0 || t.hours > 24) {
-        std::cout << "Error: La hora debe ser mayor a 0 y menor a 24." << std::endl;
-        exit(1);
-    }
-    
-    return 0;
-
 }
 
 // Validación de minutos 
@@ -353,7 +342,7 @@ int timeEntry(std::vector<std::string> &words, Time &tpointer) {
         s = std::stoi(words[2]);
         Time t(h, m, s);
         t.ap = 'a';
-        validateHoursII(t);
+        validateHoursI(t);
         validateMinutes(t);
         validateSeconds(t);
         tpointer = t;
@@ -365,7 +354,7 @@ int timeEntry(std::vector<std::string> &words, Time &tpointer) {
         Time t(h, m);
         t.seconds = 0;
         t.ap = 'a';
-        validateHoursII(t);
+        validateHoursI(t);
         validateMinutes(t);
         tpointer = t;
         coutsEntry();
@@ -376,7 +365,7 @@ int timeEntry(std::vector<std::string> &words, Time &tpointer) {
         t.minutes = 0;
         t.seconds = 0;
         t.ap = 'a';
-        validateHoursII(t);
+        validateHoursI(t);
         tpointer = t;
         coutsEntry();
 
