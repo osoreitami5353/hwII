@@ -67,7 +67,7 @@ void Course::searchStudentInCourse(int filenumber) {
 
 // Método para agregar un estudiante a un curso
 int Course::addStudentToCourse(std::shared_ptr<Student> student) {
-    if (students.size() >= static_cast<std::size_t>(maxStudents)) { std::cerr << "Error: El curso ya tiene el número máximo de estudiantes." << std::endl; exit(1); }
+    if (students.size() >= static_cast<std::size_t>(maxStudents)) { std::cerr << "Error: El curso ya tiene el número máximo de estudiantes." << std::endl; return -1; }
 
     if (objectStudentInTheCourse(student->filenumber)) { std::cerr << "Error: El estudiante ya está inscrito en el curso." << std::endl; exit(1); }
 
@@ -256,7 +256,7 @@ int createCourse(std::vector<std::shared_ptr<Course>> &coursesList, const std::v
     std::cout << "¿Cuántos estudiantes tendrá como máximo este curso?: ";
     std::cin >> maxStudents;
 
-    if (maxStudents <= 0) { std::cerr << "Error: El número máximo de estudiantes debe ser mayor que 0." << std::endl; exit(1); }
+    if (maxStudents <= 0) { std::cerr << "Error: El número máximo de estudiantes debe ser mayor que 0." << std::endl; return -1; }
 
     std::cout << "\n¿Desea ingresar estudiantes al curso?" << std::endl;
     std::cout << "1. Sí" << std::endl;

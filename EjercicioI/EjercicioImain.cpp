@@ -38,7 +38,8 @@ int main(){
         std::cout << "5. Mostrar ap individualmente" << std::endl;
         std::cout << "6. Mostrar hora completa" << std::endl;
         std::cout << "7. Mostrar hora completa en formato 24." << std::endl;
-        std::cout << "8. Salir" << std::endl;
+        std::cout << "8. Ingresar nueva hora." << std::endl;
+        std::cout << "9. Salir" << std::endl;
         std::cout << "=============================================" << std::endl;
         std::cout << "Opción seleccionada: ";
 
@@ -77,7 +78,26 @@ int main(){
                 tpointer->get24TimeInfo();
                 break;
             
-            case 8:
+            case 8: {
+                std::cout << "Introduce el tiempo en el formato: h m s am/pm (Ejemplo: 3 24 16 pm): ";
+
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, input);
+            
+                std::istringstream ss(input);
+                std::string word;
+                words.clear(); // Importante: limpiar el vector para no acumular entradas anteriores
+            
+                while (ss >> word) {
+                    words.push_back(word);
+                }
+            
+                timeEntry(words, *tpointer);
+                break;
+
+            }
+            
+            case 9:
                 std::cout << "Saliendo del programa..." << std::endl;
                 
                 break;
@@ -89,7 +109,7 @@ int main(){
 
         }
 
-    } while (option != 8);
+    } while (option != 9);
     
     return 0;
 }

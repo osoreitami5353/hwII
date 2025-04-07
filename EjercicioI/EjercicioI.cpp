@@ -215,6 +215,14 @@ int Time::modifyTime() {
         
         coutsModification();
 
+    } else if (words.size() == 0){
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+        ap = 'a';
+
+        coutsModification();
+
     } else {
 
         std::cerr << "Error: Formato de hora no válido." << std::endl;
@@ -367,6 +375,10 @@ int timeEntry(std::vector<std::string> &words, Time &tpointer) {
         t.ap = 'a';
         validateHoursI(t);
         tpointer = t;
+        coutsEntry();
+    
+    } else if (words.size() == 0){
+        Time t;
         coutsEntry();
 
     } else {
