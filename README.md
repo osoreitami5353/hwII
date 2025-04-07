@@ -84,7 +84,7 @@ Respuesta a punto c): La relación entre los objetos Curso y Estudiante es una a
 - `EjercicioII.cpp`: Implementaciones de las funciones declaradas en el .hpp.
 - `EjercicioIImain.cpp`: Contiene la función principal main() con el menú interactivo.
 
-### Ejercicio III: Operaciones entre Enteros, Reales y Complejos usando Polimorfismo en C++
+## Ejercicio III: Operaciones entre Enteros, Reales y Complejos usando Polimorfismo en C++
 
 En este ejercicio, se implementó una jerarquía de clases para representar números de diferentes tipos (Integer, Real, Complex) y se permitió realizar operaciones aritméticas entre ellos utilizando polimorfismo y dynamic_cast. La clase base abstracta Number define una interfaz común, y cada clase derivada implementa las operaciones respetando su lógica matemática.
 
@@ -121,7 +121,7 @@ En este ejercicio, se implementó una jerarquía de clases para representar núm
 - `EjercicioIII.cpp`: Implementaciones de los métodos de cada clase y de las funciones auxiliares del ejercicio.
 - `EjercicioIIImain.cpp`: Contiene la función main() con el menú interactivo para realizar operaciones entre distintos tipos de números.
 
-### Ejercicio IV: Sistema Bancario con Cuentas Vinculadas usando Herencia y Polimorfismo en C++
+## Ejercicio IV: Sistema Bancario con Cuentas Vinculadas usando Herencia y Polimorfismo en C++
 
 En este ejercicio, se desarrolló un sistema bancario que permite gestionar cajas de ahorro y cuentas corrientes utilizando herencia y polimorfismo. La clase base abstracta BankAccount define una interfaz común para ambas cuentas, mientras que SavingsBank y CheckingAccount extienden su funcionalidad. La cuenta corriente puede acceder a fondos de su caja de ahorro vinculada si es necesario, y se implementa una penalización por mostrar repetidamente la información de la caja de ahorro. El sistema interactúa con el usuario mediante un menú de opciones.
 
